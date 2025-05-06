@@ -1,5 +1,15 @@
 # 폐렴 이상 탐지 프로젝트 (Autoencoder + XAI)
 
+<p align="center">
+  <img src="https://github.com/soyomii/pneumonia-anomaly-xai/assets/autoencoder_xai_heatmap_overlay_top5.png" width="600"/>
+  <br/>
+  <i>Autoencoder 기반 복원 실패 영역을 Heatmap으로 시각화한 예시</i>
+</p>
+
+
+
+# 폐렴 이상 탐지 프로젝트 (Autoencoder + XAI)
+
 이 프로젝트는 정상 흉부 X-ray 이미지만을 학습한 오토인코더(Autoencoder)를 사용하여,  
 폐렴 환자 이미지를 복원하면서 생기는 오류(MSE)를 이용해 비정상 이미지를 감지합니다.  
 복원 실패한 부분을 **Heatmap**으로 시각화하여, 어떤 영역이 이상인지를 쉽게 볼 수 있도록 했습니다.
@@ -56,4 +66,26 @@
 - **Heatmap**은 복원 오류가 큰 부분을 시각화하지만, **모든 병변을 정확히 표현하는 것**은 아닙니다.
 
 ---
+
+
+---
+
+## 📊 시각화 결과
+
+### 🔍 재구성 오류(MSE) 분포
+<img src="https://github.com/soyomii/pneumonia-anomaly-xai/assets/autoencoder_mse_distribution_histogram.png" width="600"/>
+
+### 🎯 정상 vs 폐렴 MSE 비교
+<img src="https://github.com/soyomii/pneumonia-anomaly-xai/assets/mse_distribution_comparison_threshold.png" width="600"/>
+
+### 🔥 복원 실패 Heatmap 예시 (정상 / 폐렴)
+<img src="https://github.com/soyomii/pneumonia-anomaly-xai/assets/mse_distribution_threshold_refined.png" width="700"/>
+
+### 📸 복원 비교: 원본 vs Autoencoder
+<img src="https://github.com/soyomii/pneumonia-anomaly-xai/assets/pneumonia_reconstruction_comparison.png" width="750"/>
+
+### ⚠️ 높은 MSE 순서 Top5 샘플
+<img src="https://github.com/soyomii/pneumonia-anomaly-xai/assets/top5_high_mse_pneumonia_samples.png" width="750"/>
+
+
 
