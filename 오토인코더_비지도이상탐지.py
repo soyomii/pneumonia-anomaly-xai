@@ -60,8 +60,7 @@ print("✅ 학습 완료!")
 decoded_imgs = autoencoder.predict(x_data)
 
 def plot_xai_overlay(original_imgs, reconstructed_imgs, n=5):
-    import matplotlib.pyplot as plt
-    import numpy as np
+    
 
     plt.figure(figsize=(12, 6))
     for i in range(n):
@@ -92,7 +91,7 @@ def plot_xai_overlay(original_imgs, reconstructed_imgs, n=5):
 plot_xai_overlay(x_data, decoded_imgs, n=5)
 
 
-import numpy as np
+
 
 # 각 이미지별 재구성 오류(MSE) 계산
 mse_errors = np.mean((x_data - decoded_imgs) ** 2, axis=(1,2,3))
@@ -159,7 +158,7 @@ mse_errors = np.mean((test_data - reconstructed) ** 2, axis=(1,2,3))
 for i, error in enumerate(mse_errors):
     print(f"{i+1}번 폐렴 이미지 MSE 오차: {error:.4f}")
 
-import matplotlib.pyplot as plt
+
 
 plt.figure(figsize=(15, 4))
 for i in range(5):
@@ -182,9 +181,9 @@ plt.show()
 print("NaN 포함 여부:", np.isnan(x_data).any())
 
 
-import os
-import numpy as np
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
+
+
+
 
 def load_images(folder_path, img_size=(150, 150)):
     images = []
@@ -219,9 +218,9 @@ pneumonia_mse_errors = calculate_mse(pneumonia_x, pneumonia_recon)
 
 print(f"정상 평균 MSE: {np.mean(normal_mse_errors):.6f}")
 print(f"폐렴 평균 MSE: {np.mean(pneumonia_mse_errors):.6f}")
-import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt
+
+
 
 plt.figure(figsize=(10, 5))
 plt.hist(normal_mse_errors, bins=50, alpha=0.7, label="정상")
@@ -236,8 +235,8 @@ plt.show()
 
 pneumonia_recon = autoencoder.predict(pneumonia_x)
 
-import matplotlib.pyplot as plt
-import numpy as np
+
+
 
 # ✅ MSE 분포 시각화
 plt.figure(figsize=(10, 5))
@@ -262,8 +261,8 @@ print(f"폐렴 중 이상치로 감지된 수: {pneumonia_anomaly_count} / {tota
 print(f"감지율: {pneumonia_anomaly_count / total_pneumonia * 100:.2f}%")
 
 
-import numpy as np
-import matplotlib.pyplot as plt
+
+
 
 def plot_xai_heatmap(original_imgs, reconstructed_imgs, mse_errors, n=5):
     plt.figure(figsize=(15, 6))
@@ -302,8 +301,8 @@ def plot_xai_heatmap(original_imgs, reconstructed_imgs, mse_errors, n=5):
 
 
 def plot_xai_overlay(original_imgs, reconstructed_imgs, n=5):
-    import matplotlib.pyplot as plt
-    import numpy as np
+    
+    
 
     plt.figure(figsize=(12, 6))
 
